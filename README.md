@@ -1,4 +1,19 @@
+docker-compose up --build
 
-docker build -t sonnyyu/splunk .
+docker-compose up -d
 
-docker run -d -p 8000:8000 -e 'SPLUNK_START_ARGS=--accept-license' -e 'SPLUNK_PASSWORD=password' sonnyyu/splunk:latest
+docker-compose stop
+
+docker-compose down
+
+docker container prune -f
+
+docker image prune -a -f
+
+docker volume prune -f
+
+docker network prune -f
+
+docker system prune -f
+
+sudo rm -rf /var/lib/docker/volumes/*
