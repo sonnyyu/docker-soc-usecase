@@ -1,12 +1,11 @@
-version: '3'
+version: '3.7'
 services:
-  splunk:
-    hostname: splunkenterprise
-    #image: splunk/splunk:latest
+  docker-splunk:
+    hostname: docker-splunk
     build:
       context: ./splunk
       dockerfile: Dockerfile
-    container_name: splunk
+    container_name: docker-splunk
     environment:
       - SPLUNK_ENABLE_LISTEN=9997
       - SPLUNK_START_ARGS=--accept-license --no-prompt --answer-yes

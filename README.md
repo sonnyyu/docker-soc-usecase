@@ -1,8 +1,12 @@
+docker-compose config
+
 docker-compose up --build
+
+docker-compose stop
 
 docker-compose up -d
 
-docker-compose stop
+docker logs splunk
 
 docker-compose down
 
@@ -17,3 +21,5 @@ docker network prune -f
 docker system prune -f
 
 sudo rm -rf /var/lib/docker/volumes/*
+
+docker exec -it splunk /bin/bash
